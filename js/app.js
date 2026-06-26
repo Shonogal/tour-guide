@@ -3,6 +3,7 @@ const TRIPS_MANIFEST = [
 ];
 
 let state = { trips: [], currentTrip: null, currentPlace: null, tts: null, speaking: false };
+let availableVoices = [];
 
 // ── Routing ──────────────────────────────────────────────
 function showScreen(id) {
@@ -50,7 +51,10 @@ function loadTrip(tripId) {
   const list = document.getElementById('places-list');
   list.innerHTML = trip.places.map(p => `
     <div class="place-item" onclick="loadPlace('${p.id}')">
-      <div class="place-emoji">${p.emoji}</div>
+      ${p.image
+        ? `<div class="place-thumb"><img src="${p.image}" alt="${p.name}" loading="lazy" /></div>`
+        : `<div class="place-emoji">${p.emoji}</div>`
+      }
       <div class="place-info">
         <div class="place-name">${p.name}</div>
         <div class="place-meta">
@@ -77,53 +81,89 @@ function loadPlace(placeId) {
 
   const isZh = state.currentTrip.language === 'zh';
 
+  const imageHtml = place.image
+    ? `<div class="detail-image-wrap">
+        <img class="detail-image" src="${place.image}" alt="${place.name}" />
+        <div class="detail-image-overlay"></div>
+       </div>`
+    : `<div class="detail-image-wrap">
+        <div class="detail-image-placeholder">${place.emoji}</div>
+       </div>`;
+
   document.getElementById('place-detail').innerHTML = `
-    <div class="detail-hero">
-      <div class="detail-emoji">${place.emoji}</div>
-      <div class="detail-name">${place.name}</div>
-      <div class="detail-meta">
-        <span class="badge badge-day">${place.date}</span>
-        <span class="badge badge-time">${place.time}</span>
-        <span class="badge badge-cat">${place.category}</span>
+    ${imageHtml}
+
+    <div class="detail-inner">
+      <div class="detail-hero">
+        <div class="detail-emoji">${place.emoji}</div>
+        <div class="detail-name">${place.name}</div>
+        <div class="detail-meta">
+          <span class="badge badge-day">${place.date}</span>
+          <span class="badge badge-time">${place.time}</span>
+          <span class="badge badge-cat">${place.category}</span>
+        </div>
       </div>
-    </div>
 
-    <div class="audio-player" id="audio-player">
-      <button class="play-btn" id="play-btn" onclick="toggleAudio()">▶</button>
-      <div class="audio-info">
-        <div class="audio-label">${isZh ? '语音导览' : 'Audio Guide'}</div>
-        <div class="audio-status" id="audio-status">${isZh ? '点击播放' : 'Tap to play'}</div>
-        <div class="audio-progress"><div class="audio-progress-fill" id="audio-progress-fill"></div></div>
+      <div class="audio-player" id="audio-player">
+        <button class="play-btn" id="play-btn" onclick="toggleAudio()">▶</button>
+        <div class="audio-info">
+          <div class="audio-label">${isZh ? '语音导览' : 'Audio Guide'}</div>
+          <div class="audio-status" id="audio-status">${isZh ? '点击播放' : 'Tap to play'}</div>
+          <div class="audio-progress"><div class="audio-progress-fill" id="audio-progress-fill"></div></div>
+        </div>
       </div>
-    </div>
 
-    <div class="section-card">
-      <h3><span class="icon">✨</span>${isZh ? '为什么值得来' : 'Why It\'s Worth It'}</h3>
-      <p class="hook-text">${place.hook}</p>
-    </div>
+      <div class="section-card">
+        <h3><span class="icon">✨</span>${isZh ? '为什么值得来' : "Why It's Worth It"}</h3>
+        <p class="hook-text">${place.hook}</p>
+      </div>
 
-    <div class="section-card">
-      <h3><span class="icon">📋</span>${isZh ? '实用贴士' : 'Practical Tips'}</h3>
-      <ul class="tip-list">
-        ${place.practical.map(t => `<li>${t}</li>`).join('')}
-      </ul>
-    </div>
+      <div class="section-card">
+        <h3><span class="icon">📋</span>${isZh ? '实用贴士' : 'Practical Tips'}</h3>
+        <ul class="tip-list">
+          ${place.practical.map(t => `<li>${t}</li>`).join('')}
+        </ul>
+      </div>
 
-    <div class="section-card">
-      <h3><span class="icon">🍜</span>${isZh ? '美食推荐' : 'Food Highlights'}</h3>
-      <ul class="food-list">
-        ${place.food.map(f => `<li>${f}</li>`).join('')}
-      </ul>
+      <div class="section-card">
+        <h3><span class="icon">🥗</span>${isZh ? '素食 & 美食' : 'Food Highlights'}</h3>
+        <ul class="food-list">
+          ${place.food.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+      </div>
     </div>
   `;
 }
 
 // ── Audio (TTS) ───────────────────────────────────────────
+function initVoices() {
+  availableVoices = window.speechSynthesis.getVoices();
+  if (availableVoices.length === 0) {
+    window.speechSynthesis.onvoiceschanged = () => {
+      availableVoices = window.speechSynthesis.getVoices();
+    };
+  }
+}
+
+function getVoice(lang) {
+  const voices = availableVoices.length > 0 ? availableVoices : window.speechSynthesis.getVoices();
+  // Prefer younger, natural-sounding voices
+  const prefs = lang === 'zh'
+    ? ['Tingting', 'Meijia', 'zh-CN', 'zh-TW', 'zh']
+    : ['Samantha', 'Karen', 'Moira', 'Serena', 'en-AU', 'en-GB', 'en-US'];
+
+  for (const pref of prefs) {
+    const v = voices.find(v => v.name === pref || v.lang === pref || v.name.startsWith(pref));
+    if (v) return v;
+  }
+  return voices.find(v => v.lang.startsWith(lang === 'zh' ? 'zh' : 'en')) || null;
+}
+
 function buildScript(place, isZh) {
   if (isZh) {
-    return `${place.name}。${place.hook} 实用提示：${place.practical.join('。')}。美食推荐：${place.food.join('。')}。`;
+    return `${place.name}！${place.hook} 实用小贴士：${place.practical.join('。')}。素食和美食：${place.food.join('。')}。`;
   }
-  return `${place.name}. ${place.hook} Practical tips: ${place.practical.join('. ')}. Food highlights: ${place.food.join('. ')}.`;
+  return `${place.name}! ${place.hook} Here are some tips: ${place.practical.join('. ')}. Food highlights: ${place.food.join('. ')}.`;
 }
 
 function toggleAudio() {
@@ -144,11 +184,14 @@ function playAudio() {
 
   const utt = new SpeechSynthesisUtterance(script);
   utt.lang = isZh ? 'zh-CN' : 'en-US';
-  utt.rate = 0.92;
-  utt.pitch = 1;
+  utt.rate = 1.05;   // slightly faster = livelier
+  utt.pitch = 1.15;  // slightly higher = younger, friendlier
+
+  const voice = getVoice(isZh ? 'zh' : 'en');
+  if (voice) utt.voice = voice;
 
   let start = Date.now();
-  const approxDuration = script.length * (isZh ? 180 : 60);
+  const approxDuration = script.length * (isZh ? 160 : 55);
 
   const progressInterval = setInterval(() => {
     if (!state.speaking) { clearInterval(progressInterval); return; }
@@ -165,7 +208,7 @@ function playAudio() {
     const status = document.getElementById('audio-status');
     const fill = document.getElementById('audio-progress-fill');
     if (btn) btn.textContent = '▶';
-    if (status) status.textContent = isZh ? '播放完毕' : 'Finished';
+    if (status) status.textContent = isZh ? '播放完毕 ✓' : 'Done ✓';
     if (fill) fill.style.width = '100%';
   };
 
@@ -212,4 +255,5 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/tour-guide/sw.js');
 }
 
+initVoices();
 loadHome();
