@@ -137,26 +137,40 @@ function loadPlace(placeId) {
 
 // ── Audio (TTS) ───────────────────────────────────────────
 function initVoices() {
-  availableVoices = window.speechSynthesis.getVoices();
-  if (availableVoices.length === 0) {
-    window.speechSynthesis.onvoiceschanged = () => {
-      availableVoices = window.speechSynthesis.getVoices();
-    };
-  }
+  const load = () => { availableVoices = window.speechSynthesis.getVoices(); };
+  load();
+  window.speechSynthesis.onvoiceschanged = load;
+  // iOS unlock: fire a silent utterance on first touch so voices become available
+  document.addEventListener('touchstart', function unlock() {
+    const silent = new SpeechSynthesisUtterance(' ');
+    silent.volume = 0;
+    window.speechSynthesis.speak(silent);
+    window.speechSynthesis.cancel();
+    availableVoices = window.speechSynthesis.getVoices();
+    document.removeEventListener('touchstart', unlock);
+  }, { once: true });
 }
 
 function getVoice(lang) {
   const voices = availableVoices.length > 0 ? availableVoices : window.speechSynthesis.getVoices();
-  // Prefer younger, natural-sounding voices
-  const prefs = lang === 'zh'
-    ? ['Tingting', 'Meijia', 'zh-CN', 'zh-TW', 'zh']
-    : ['Samantha', 'Karen', 'Moira', 'Serena', 'en-AU', 'en-GB', 'en-US'];
 
-  for (const pref of prefs) {
-    const v = voices.find(v => v.name === pref || v.lang === pref || v.name.startsWith(pref));
-    if (v) return v;
+  if (lang === 'zh') {
+    // On iOS: Meijia (zh-TW) sounds warmer and more natural than Tingting (zh-CN)
+    const zhPrefs = ['Meijia', 'Tingting', 'zh-TW', 'zh-CN', 'zh'];
+    for (const p of zhPrefs) {
+      const v = voices.find(v => v.name === p || v.lang === p || v.name.includes(p));
+      if (v) return v;
+    }
+    // Fallback: any Chinese voice
+    return voices.find(v => v.lang.startsWith('zh')) || null;
+  } else {
+    const enPrefs = ['Samantha', 'Karen', 'Moira', 'Serena', 'en-AU', 'en-GB', 'en-US'];
+    for (const p of enPrefs) {
+      const v = voices.find(v => v.name === p || v.lang === p || v.name.includes(p));
+      if (v) return v;
+    }
+    return voices.find(v => v.lang.startsWith('en')) || null;
   }
-  return voices.find(v => v.lang.startsWith(lang === 'zh' ? 'zh' : 'en')) || null;
 }
 
 function buildScript(place, isZh) {

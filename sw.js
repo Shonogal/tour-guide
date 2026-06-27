@@ -1,4 +1,4 @@
-const CACHE = 'tour-guide-v2';
+const CACHE = 'tour-guide-v3';
 const ASSETS = [
   '/tour-guide/',
   '/tour-guide/index.html',
