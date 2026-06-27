@@ -2,8 +2,7 @@ const TRIPS_MANIFEST = [
   { id: 'chongqing-2026-08', emoji: '🌶️', file: 'trips/chongqing-2026-08.json' }
 ];
 
-let state = { trips: [], currentTrip: null, currentPlace: null, tts: null, speaking: false };
-let availableVoices = [];
+let state = { trips: [], currentTrip: null, currentPlace: null, speaking: false };
 
 // ── Routing ──────────────────────────────────────────────
 function showScreen(id) {
@@ -135,50 +134,8 @@ function loadPlace(placeId) {
   `;
 }
 
-// ── Audio (TTS) ───────────────────────────────────────────
-function initVoices() {
-  const load = () => { availableVoices = window.speechSynthesis.getVoices(); };
-  load();
-  window.speechSynthesis.onvoiceschanged = load;
-  // iOS unlock: fire a silent utterance on first touch so voices become available
-  document.addEventListener('touchstart', function unlock() {
-    const silent = new SpeechSynthesisUtterance(' ');
-    silent.volume = 0;
-    window.speechSynthesis.speak(silent);
-    window.speechSynthesis.cancel();
-    availableVoices = window.speechSynthesis.getVoices();
-    document.removeEventListener('touchstart', unlock);
-  }, { once: true });
-}
-
-function getVoice(lang) {
-  const voices = availableVoices.length > 0 ? availableVoices : window.speechSynthesis.getVoices();
-
-  if (lang === 'zh') {
-    // On iOS: Meijia (zh-TW) sounds warmer and more natural than Tingting (zh-CN)
-    const zhPrefs = ['Meijia', 'Tingting', 'zh-TW', 'zh-CN', 'zh'];
-    for (const p of zhPrefs) {
-      const v = voices.find(v => v.name === p || v.lang === p || v.name.includes(p));
-      if (v) return v;
-    }
-    // Fallback: any Chinese voice
-    return voices.find(v => v.lang.startsWith('zh')) || null;
-  } else {
-    const enPrefs = ['Samantha', 'Karen', 'Moira', 'Serena', 'en-AU', 'en-GB', 'en-US'];
-    for (const p of enPrefs) {
-      const v = voices.find(v => v.name === p || v.lang === p || v.name.includes(p));
-      if (v) return v;
-    }
-    return voices.find(v => v.lang.startsWith('en')) || null;
-  }
-}
-
-function buildScript(place, isZh) {
-  if (isZh) {
-    return `${place.name}！${place.hook} 实用小贴士：${place.practical.join('。')}。素食和美食：${place.food.join('。')}。`;
-  }
-  return `${place.name}! ${place.hook} Here are some tips: ${place.practical.join('. ')}. Food highlights: ${place.food.join('. ')}.`;
-}
+// ── Audio ─────────────────────────────────────────────────
+let audioEl = null;
 
 function toggleAudio() {
   if (state.speaking) {
@@ -189,66 +146,103 @@ function toggleAudio() {
 }
 
 function playAudio() {
-  if (!window.speechSynthesis) return;
   stopAudio();
-
   const place = state.currentPlace;
-  const isZh = state.currentTrip.language === 'zh';
-  const script = buildScript(place, isZh);
+  const trip = state.currentTrip;
+  const isZh = trip.language === 'zh';
+  const mp3 = `audio/${trip.id}-${place.id}.mp3`;
 
-  const utt = new SpeechSynthesisUtterance(script);
-  utt.lang = isZh ? 'zh-CN' : 'en-US';
-  utt.rate = 1.05;   // slightly faster = livelier
-  utt.pitch = 1.15;  // slightly higher = younger, friendlier
+  audioEl = new Audio(mp3);
 
-  const voice = getVoice(isZh ? 'zh' : 'en');
-  if (voice) utt.voice = voice;
+  audioEl.addEventListener('canplay', () => {
+    setAudioUI('playing', isZh);
+    audioEl.play();
+    state.speaking = true;
+  });
 
-  let start = Date.now();
-  const approxDuration = script.length * (isZh ? 160 : 55);
-
-  const progressInterval = setInterval(() => {
-    if (!state.speaking) { clearInterval(progressInterval); return; }
-    const pct = Math.min(100, ((Date.now() - start) / approxDuration) * 100);
+  audioEl.addEventListener('timeupdate', () => {
+    if (!audioEl.duration) return;
+    const pct = (audioEl.currentTime / audioEl.duration) * 100;
     const fill = document.getElementById('audio-progress-fill');
     if (fill) fill.style.width = pct + '%';
-  }, 200);
+  });
 
-  utt.onend = () => {
-    clearInterval(progressInterval);
+  audioEl.addEventListener('ended', () => {
     state.speaking = false;
-    state.tts = null;
-    const btn = document.getElementById('play-btn');
-    const status = document.getElementById('audio-status');
+    setAudioUI('done', isZh);
     const fill = document.getElementById('audio-progress-fill');
-    if (btn) btn.textContent = '▶';
-    if (status) status.textContent = isZh ? '播放完毕 ✓' : 'Done ✓';
     if (fill) fill.style.width = '100%';
-  };
+  });
 
-  utt.onerror = () => { clearInterval(progressInterval); stopAudio(); };
+  audioEl.addEventListener('error', () => {
+    // MP3 not found — fall back to Web Speech API
+    audioEl = null;
+    playWebSpeech(place, isZh);
+  });
 
-  state.tts = utt;
-  state.speaking = true;
-  window.speechSynthesis.speak(utt);
-
-  const btn = document.getElementById('play-btn');
-  const statusEl = document.getElementById('audio-status');
-  if (btn) btn.textContent = '⏸';
-  if (statusEl) statusEl.textContent = isZh ? '正在播放…' : 'Playing…';
+  audioEl.load();
 }
 
 function stopAudio() {
+  if (audioEl) { audioEl.pause(); audioEl.src = ''; audioEl = null; }
   if (window.speechSynthesis) window.speechSynthesis.cancel();
   state.speaking = false;
-  state.tts = null;
+  const isZh = state.currentTrip?.language === 'zh';
+  setAudioUI('idle', isZh);
+  const fill = document.getElementById('audio-progress-fill');
+  if (fill) fill.style.width = '0%';
+}
+
+function setAudioUI(mode, isZh) {
   const btn = document.getElementById('play-btn');
   const status = document.getElementById('audio-status');
-  const fill = document.getElementById('audio-progress-fill');
-  const isZh = state.currentTrip?.language === 'zh';
-  if (btn) btn.textContent = '▶';
-  if (status) status.textContent = isZh ? '点击播放' : 'Tap to play';
-  if (fill) fill.style.width = '0%';
+  if (!btn || !status) return;
+  if (mode === 'playing') {
+    btn.textContent = '⏸';
+    status.textContent = isZh ? '正在播放…' : 'Playing…';
+  } else if (mode === 'done') {
+    btn.textContent = '▶';
+    status.textContent = isZh ? '播放完毕 ✓' : 'Done ✓';
+  } else {
+    btn.textContent = '▶';
+    status.textContent = isZh ? '点击播放' : 'Tap to play';
+  }
+}
+
+// Web Speech API fallback (used when MP3 not yet generated)
+function playWebSpeech(place, isZh) {
+  if (!window.speechSynthesis) return;
+  const foodItems = place.food.filter(f => !f.startsWith('📖'));
+  const script = isZh
+    ? `${place.name}！${place.hook} 实用贴士：${place.practical.join('。')}。美食推荐：${foodItems.join('。')}。`
+    : `${place.name}! ${place.hook} Tips: ${place.practical.join('. ')}. Food: ${foodItems.join('. ')}.`;
+
+  const utt = new SpeechSynthesisUtterance(script);
+  utt.lang = isZh ? 'zh-CN' : 'en-US';
+  utt.rate = 1.0; utt.pitch = 1.1;
+
+  const voices = window.speechSynthesis.getVoices();
+  const prefs = isZh ? ['Meijia', 'Tingting', 'zh-TW', 'zh-CN'] : ['Samantha', 'Karen', 'en-AU', 'en-US'];
+  for (const p of prefs) {
+    const v = voices.find(v => v.name === p || v.lang === p || v.name.includes(p));
+    if (v) { utt.voice = v; break; }
+  }
+
+  let start = Date.now();
+  const approxMs = script.length * (isZh ? 160 : 55);
+  const interval = setInterval(() => {
+    if (!state.speaking) { clearInterval(interval); return; }
+    const pct = Math.min(95, ((Date.now() - start) / approxMs) * 100);
+    const fill = document.getElementById('audio-progress-fill');
+    if (fill) fill.style.width = pct + '%';
+  }, 300);
+
+  utt.onend = () => { clearInterval(interval); state.speaking = false; setAudioUI('done', isZh); };
+  utt.onerror = () => { clearInterval(interval); stopAudio(); };
+
+  state.speaking = true;
+  setAudioUI('playing', isZh);
+  window.speechSynthesis.speak(utt);
 }
 
 // ── Header ────────────────────────────────────────────────
@@ -269,5 +263,4 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/tour-guide/sw.js');
 }
 
-initVoices();
 loadHome();
