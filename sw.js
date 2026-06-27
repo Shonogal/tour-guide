@@ -1,15 +1,18 @@
-const CACHE = 'tour-guide-v4';
+const CACHE = 'tour-guide-v5';
 const ASSETS = [
   '/tour-guide/',
   '/tour-guide/index.html',
   '/tour-guide/css/style.css',
   '/tour-guide/js/app.js',
   '/tour-guide/trips/chongqing-2026-08.json',
-  '/tour-guide/audio/chongqing-2026-08-hongyadong.mp3',
   '/tour-guide/audio/chongqing-2026-08-jiefangbei.mp3',
+  '/tour-guide/audio/chongqing-2026-08-hongyadong.mp3',
+  '/tour-guide/audio/chongqing-2026-08-hotpot.mp3',
   '/tour-guide/audio/chongqing-2026-08-ciqikou.mp3',
   '/tour-guide/audio/chongqing-2026-08-ropeway.mp3',
-  '/tour-guide/audio/chongqing-2026-08-hotpot.mp3'
+  '/tour-guide/audio/chongqing-2026-08-chaotianmen.mp3',
+  '/tour-guide/audio/chongqing-2026-08-liziba.mp3',
+  '/tour-guide/audio/chongqing-2026-08-elingfactory.mp3'
 ];
 
 self.addEventListener('install', e => {
