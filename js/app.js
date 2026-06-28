@@ -193,7 +193,7 @@ function playAudio() {
   const place = state.currentPlace;
   const trip = state.currentTrip;
   const isZh = state.lang === 'zh';
-  const mp3 = `audio/${trip.id}-${place.id}.mp3`;
+  const mp3 = `audio/${trip.id}-${place.id}${isZh ? '' : '-en'}.mp3`;
 
   audioEl = new Audio(mp3);
 
