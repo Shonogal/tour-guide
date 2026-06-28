@@ -2,7 +2,42 @@ const TRIPS_MANIFEST = [
   { id: 'chongqing-2026-08', emoji: '🌶️', file: 'trips/chongqing-2026-08.json' }
 ];
 
-let state = { trips: [], currentTrip: null, currentPlace: null, speaking: false };
+let state = {
+  trips: [],
+  currentTrip: null,
+  currentPlace: null,
+  speaking: false,
+  lang: localStorage.getItem('tour-lang') || 'zh'
+};
+
+// ── Lang helpers ──────────────────────────────────────────
+function loc(zhVal, enVal) {
+  return state.lang === 'en' && enVal ? enVal : zhVal;
+}
+function locArr(place, field) {
+  const enKey = field + '_en';
+  return state.lang === 'en' && place[enKey] ? place[enKey] : place[field];
+}
+
+// ── Language toggle ───────────────────────────────────────
+function toggleLang() {
+  state.lang = state.lang === 'zh' ? 'en' : 'zh';
+  localStorage.setItem('tour-lang', state.lang);
+  updateLangBtn();
+
+  if (document.getElementById('screen-home').classList.contains('active')) {
+    loadHome();
+  } else if (document.getElementById('screen-trip').classList.contains('active') && state.currentTrip) {
+    loadTrip(state.currentTrip.id);
+  } else if (document.getElementById('screen-place').classList.contains('active') && state.currentPlace) {
+    loadPlace(state.currentPlace.id);
+  }
+}
+
+function updateLangBtn() {
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = state.lang === 'zh' ? '🇨🇳' : '🇬🇧';
+}
 
 // ── Routing ──────────────────────────────────────────────
 function showScreen(id) {
@@ -18,22 +53,24 @@ async function loadHome() {
   const list = document.getElementById('trip-list');
   list.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading trips...</p></div>';
 
-  const trips = await Promise.all(
-    TRIPS_MANIFEST.map(async m => {
-      const r = await fetch(m.file);
-      const data = await r.json();
-      return { ...data, emoji: m.emoji };
-    })
-  );
-  state.trips = trips;
+  if (state.trips.length === 0) {
+    const trips = await Promise.all(
+      TRIPS_MANIFEST.map(async m => {
+        const r = await fetch(m.file);
+        const data = await r.json();
+        return { ...data, emoji: m.emoji };
+      })
+    );
+    state.trips = trips;
+  }
 
-  list.innerHTML = trips.map(t => `
+  list.innerHTML = state.trips.map(t => `
     <div class="trip-card" onclick="loadTrip('${t.id}')">
-      <div class="trip-count">${t.places.length} places</div>
+      <div class="trip-count">${t.places.length} ${loc('个地点', 'places')}</div>
       <div class="trip-emoji">${t.emoji}</div>
-      <div class="trip-name">${t.title}</div>
-      <div class="trip-dest">${t.destination}</div>
-      <div class="trip-month">${t.month}</div>
+      <div class="trip-name">${loc(t.title, t.title_en)}</div>
+      <div class="trip-dest">${loc(t.destination, t.destination_en)}</div>
+      <div class="trip-month">${loc(t.month, t.month_en)}</div>
     </div>
   `).join('');
 }
@@ -44,22 +81,22 @@ function loadTrip(tripId) {
   if (!trip) return;
   state.currentTrip = trip;
 
-  updateHeader(trip.title, trip.destination, true, () => loadHome());
+  updateHeader(loc(trip.title, trip.title_en), loc(trip.destination, trip.destination_en), true, () => loadHome());
   showScreen('screen-trip');
 
   const list = document.getElementById('places-list');
   list.innerHTML = trip.places.map(p => `
     <div class="place-item" onclick="loadPlace('${p.id}')">
       ${p.image
-        ? `<div class="place-thumb"><img src="${p.image}" alt="${p.name}" loading="lazy" /></div>`
+        ? `<div class="place-thumb"><img src="${p.image}" alt="${loc(p.name, p.name_en)}" loading="lazy" /></div>`
         : `<div class="place-emoji">${p.emoji}</div>`
       }
       <div class="place-info">
-        <div class="place-name">${p.name}</div>
+        <div class="place-name">${loc(p.name, p.name_en)}</div>
         <div class="place-meta">
           <span class="place-day">${p.date}</span>
-          <span class="place-time">${p.time}</span>
-          <span class="place-category">· ${p.category}</span>
+          <span class="place-time">${loc(p.time, p.time_en)}</span>
+          <span class="place-category">· ${loc(p.category, p.category_en)}</span>
         </div>
       </div>
       <div class="place-arrow">›</div>
@@ -75,14 +112,20 @@ function loadPlace(placeId) {
 
   stopAudio();
 
-  updateHeader(place.name, state.currentTrip.title, true, () => loadTrip(state.currentTrip.id));
-  showScreen('screen-place');
+  const isZh = state.lang === 'zh';
+  const name = loc(place.name, place.name_en);
+  const hook = loc(place.hook, place.hook_en);
+  const practical = locArr(place, 'practical');
+  const food = locArr(place, 'food');
+  const category = loc(place.category, place.category_en);
+  const time = loc(place.time, place.time_en);
 
-  const isZh = state.currentTrip.language === 'zh';
+  updateHeader(name, loc(state.currentTrip.title, state.currentTrip.title_en), true, () => loadTrip(state.currentTrip.id));
+  showScreen('screen-place');
 
   const imageHtml = place.image
     ? `<div class="detail-image-wrap">
-        <img class="detail-image" src="${place.image}" alt="${place.name}" />
+        <img class="detail-image" src="${place.image}" alt="${name}" />
         <div class="detail-image-overlay"></div>
        </div>`
     : `<div class="detail-image-wrap">
@@ -95,11 +138,11 @@ function loadPlace(placeId) {
     <div class="detail-inner">
       <div class="detail-hero">
         <div class="detail-emoji">${place.emoji}</div>
-        <div class="detail-name">${place.name}</div>
+        <div class="detail-name">${name}</div>
         <div class="detail-meta">
           <span class="badge badge-day">${place.date}</span>
-          <span class="badge badge-time">${place.time}</span>
-          <span class="badge badge-cat">${place.category}</span>
+          <span class="badge badge-time">${time}</span>
+          <span class="badge badge-cat">${category}</span>
         </div>
       </div>
 
@@ -114,20 +157,20 @@ function loadPlace(placeId) {
 
       <div class="section-card">
         <h3><span class="icon">✨</span>${isZh ? '为什么值得来' : "Why It's Worth It"}</h3>
-        <p class="hook-text">${place.hook}</p>
+        <p class="hook-text">${hook}</p>
       </div>
 
       <div class="section-card">
         <h3><span class="icon">📋</span>${isZh ? '实用贴士' : 'Practical Tips'}</h3>
         <ul class="tip-list">
-          ${place.practical.map(t => `<li>${t}</li>`).join('')}
+          ${practical.map(t => `<li>${t}</li>`).join('')}
         </ul>
       </div>
 
       <div class="section-card">
         <h3><span class="icon">🥗</span>${isZh ? '素食 & 美食' : 'Food Highlights'}</h3>
         <ul class="food-list">
-          ${place.food.map(f => `<li>${f}</li>`).join('')}
+          ${food.map(f => `<li>${f}</li>`).join('')}
         </ul>
       </div>
     </div>
@@ -149,7 +192,7 @@ function playAudio() {
   stopAudio();
   const place = state.currentPlace;
   const trip = state.currentTrip;
-  const isZh = trip.language === 'zh';
+  const isZh = state.lang === 'zh';
   const mp3 = `audio/${trip.id}-${place.id}.mp3`;
 
   audioEl = new Audio(mp3);
@@ -175,7 +218,6 @@ function playAudio() {
   });
 
   audioEl.addEventListener('error', () => {
-    // MP3 not found — fall back to Web Speech API
     audioEl = null;
     playWebSpeech(place, isZh);
   });
@@ -187,7 +229,7 @@ function stopAudio() {
   if (audioEl) { audioEl.pause(); audioEl.src = ''; audioEl = null; }
   if (window.speechSynthesis) window.speechSynthesis.cancel();
   state.speaking = false;
-  const isZh = state.currentTrip?.language === 'zh';
+  const isZh = state.lang === 'zh';
   setAudioUI('idle', isZh);
   const fill = document.getElementById('audio-progress-fill');
   if (fill) fill.style.width = '0%';
@@ -212,10 +254,14 @@ function setAudioUI(mode, isZh) {
 // Web Speech API fallback (used when MP3 not yet generated)
 function playWebSpeech(place, isZh) {
   if (!window.speechSynthesis) return;
-  const foodItems = place.food.filter(f => !f.startsWith('📖'));
+  const hook = loc(place.hook, place.hook_en);
+  const practical = locArr(place, 'practical');
+  const food = locArr(place, 'food');
+  const name = loc(place.name, place.name_en);
+  const foodItems = food.filter(f => !f.startsWith('📖'));
   const script = isZh
-    ? `${place.name}！${place.hook} 实用贴士：${place.practical.join('。')}。美食推荐：${foodItems.join('。')}。`
-    : `${place.name}! ${place.hook} Tips: ${place.practical.join('. ')}. Food: ${foodItems.join('. ')}.`;
+    ? `${name}！${hook} 实用贴士：${practical.join('。')}。美食推荐：${foodItems.join('。')}。`
+    : `${name}! ${hook} Tips: ${practical.join('. ')}. Food: ${foodItems.join('. ')}.`;
 
   const utt = new SpeechSynthesisUtterance(script);
   utt.lang = isZh ? 'zh-CN' : 'en-US';
@@ -263,4 +309,6 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/tour-guide/sw.js');
 }
 
+document.getElementById('lang-toggle').addEventListener('click', toggleLang);
+updateLangBtn();
 loadHome();
