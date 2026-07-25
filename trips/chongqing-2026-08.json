@@ -39,7 +39,8 @@
         "B3 food court has several vegetarian-friendly stalls",
         "Multiple restaurants in the mall offer tofu and vegetable dishes",
         "📖 Veg tip: say 'bu yao rou' (no meat) when ordering"
-      ]
+      ],
+      "image": "https://source.unsplash.com/sZTrR3yEb78/800x500"
     },
     {
       "id": "shanchengbudo",
@@ -72,7 +73,8 @@
         "Local vendors along the way sell liangfen cold jelly noodles and sticky rice cakes",
         "More snack options nearby at Shibati",
         "📖 Veg note: liangfen and glutinous rice cakes are both vegetarian"
-      ]
+      ],
+      "image": "https://source.unsplash.com/ED8lFt5F0NI/800x500"
     },
     {
       "id": "shibati",
@@ -105,7 +107,8 @@
         "Multiple local snack stalls inside — liangfen and tofu pudding are vegetarian",
         "Try the local douhua soft tofu with dipping sauce",
         "📖 Veg tip: choose snacks without meat fillings"
-      ]
+      ],
+      "image": "https://source.unsplash.com/Db_Syij14aI/800x500"
     },
     {
       "id": "veghotpot",
@@ -138,7 +141,8 @@
         "Must order: enoki mushrooms, silken tofu, wide noodles, lotus root slices",
         "For dipping sauce, choose sesame paste — rich and not spicy",
         "📖 Search nearby for restaurants with mushroom broth or marked vegetarian hotpot"
-      ]
+      ],
+      "image": "https://source.unsplash.com/r97b8nlpdqk/800x500"
     },
     {
       "id": "jiefangbei",
@@ -171,7 +175,8 @@
         "Several vegetarian restaurants within a 5-minute walk",
         "Sour and spicy noodles suanlafen are vegetarian if ordered without the meat topping",
         "📖 Take Metro Line 1 or 6 to Jiefangbei station"
-      ]
+      ],
+      "image": "https://source.unsplash.com/Ij84k8zq-zs/800x500"
     },
     {
       "id": "kuixinglou",
@@ -204,7 +209,8 @@
         "Nearby Dongshuimen Old Street has traditional snack vendors",
         "Good spot to pick up local souvenirs",
         "📖 Veg-friendly street snacks: cold jelly noodles and roasted sweet potato"
-      ]
+      ],
+      "image": "https://source.unsplash.com/hpDiLKlAuHQ/800x500"
     },
     {
       "id": "hongyadong",
@@ -237,7 +243,8 @@
         "Restaurants inside the complex — vegetarian options are limited, confirm before ordering",
         "More dining options along the riverside road nearby",
         "📖 Tomorrow's ferry departs from the tourist pier right here"
-      ]
+      ],
+      "image": "https://source.unsplash.com/4j7YguvBAYQ/800x500"
     },
     {
       "id": "liangjiangferry",
@@ -270,7 +277,8 @@
         "Breakfast stalls near the pier — grab a soy milk to take on board",
         "Small food stalls at the landing on the other side",
         "📖 Soy milk is vegan; fried dough sticks may contain lard, ask first"
-      ]
+      ],
+      "image": "https://source.unsplash.com/6UQuHTLJw4Q/800x500"
     },
     {
       "id": "danzishipu",
@@ -303,7 +311,8 @@
         "Independent cafés and light food spots throughout",
         "Local pastry shops sell peanut sticky rice and mung bean cakes",
         "📖 Both peanut mochi and mung bean cake are vegetarian"
-      ]
+      ],
+      "image": "https://source.unsplash.com/dYPmlPz3wEU/800x500"
     },
     {
       "id": "zhonglouguangchang",
@@ -336,7 +345,8 @@
         "Traditional breakfast stalls around the square",
         "Chongqing noodles xiaomian are a local staple — ask for no meat topping",
         "📖 Xiaomian without the meat topping is fully vegetarian"
-      ]
+      ],
+      "image": "https://source.unsplash.com/Gz3B2-Ac3nE/800x500"
     },
     {
       "id": "ciyunsi",
@@ -369,7 +379,8 @@
         "Vegetarian canteen often available inside or near the temple, very good value",
         "Vegetarian snack stalls outside the gates",
         "📖 Buddhist temple canteens are fully vegetarian — ideal for the family"
-      ]
+      ],
+      "image": "https://source.unsplash.com/R8GFqsCy3vw/800x500"
     },
     {
       "id": "xiakuli",
@@ -402,7 +413,8 @@
         "Several vegetarian-friendly cafés and dessert spots",
         "Try Chongqing sweet snacks: glutinous rice balls and sweet fermented rice",
         "📖 Non-meat rice balls and sweet rice wine are both vegetarian"
-      ]
+      ],
+      "image": "https://source.unsplash.com/0GBI4AwKxT8/800x500"
     },
     {
       "id": "longmenkuli",
@@ -435,7 +447,8 @@
         "Fully vegetarian restaurants inside, plus douhua rice sets",
         "Try Chongqing douhua fan — soft tofu with a spread of small vegetable side dishes",
         "📖 Douhua fan is a traditional local working-class meal, naturally vegetarian"
-      ]
+      ],
+      "image": "https://source.unsplash.com/PMlocNc9nYc/800x500"
     },
     {
       "id": "huangyechatan",
@@ -468,7 +481,8 @@
         "Green tea and jasmine tea are recommended",
         "Local vendors nearby selling watermelon seeds and peanuts",
         "📖 Sunflower seeds and peanuts are vegan — the classic tea-time snack"
-      ]
+      ],
+      "image": "https://source.unsplash.com/IRlkigQzOmQ/800x500"
     },
     {
       "id": "changjiangropeway",
@@ -501,7 +515,8 @@
         "Snack stalls at both ends of the ropeway",
         "Head back to the north bank for more dinner options",
         "📖 Vegetarian restaurants near the north bank station for dinner"
-      ]
+      ],
+      "image": "https://source.unsplash.com/phZLogY1UQs/800x500"
     },
     {
       "id": "liziba",
@@ -534,7 +549,8 @@
         "Local breakfast shops nearby — try Chongqing noodles xiaomian",
         "Several cafés near Liziba station",
         "📖 Veg breakfast options: soy milk, vegetable buns, sour noodles without the meat topping"
-      ]
+      ],
+      "image": "https://source.unsplash.com/YMVfY8ZqLV0/800x500"
     },
     {
       "id": "beibinyihao",
@@ -567,7 +583,8 @@
         "Several specialty coffee shops and light food spots along the riverside",
         "Find a café with a river view seat and take a well-earned rest",
         "📖 Most cafés here have vegetarian light meal options"
-      ]
+      ],
+      "image": "https://source.unsplash.com/JlI4LPM0Ftk/800x500"
     },
     {
       "id": "yescci",
@@ -600,7 +617,8 @@
         "Restaurants and snack stalls around the venue",
         "Chongqing has a great late-night food culture — supper after the show is a must",
         "📖 Find a vegetarian restaurant nearby for dinner before the show starts"
-      ]
+      ],
+      "image": "https://source.unsplash.com/pMnpZayQJFE/800x500"
     },
     {
       "id": "ciqikou",
@@ -633,7 +651,8 @@
         "Douhua fan soft tofu with dipping sauces is the signature dish — fully vegetarian version available",
         "Mahua twisted fried dough is vegetarian and comes in many flavours",
         "📖 Mahua is a traditional handmade fried snack, vegetarian, and great to bring home as a gift"
-      ]
+      ],
+      "image": "https://source.unsplash.com/8y3JEm038cw/800x500"
     },
     {
       "id": "chongqing1949",
@@ -666,7 +685,8 @@
         "Restaurant inside the theatre — plan to eat before the show starts",
         "Restaurants in nearby Ciqikou are a great dinner option before the show",
         "📖 Arrive at least an hour early to eat, explore, and photograph the venue exterior"
-      ]
+      ],
+      "image": "https://source.unsplash.com/FAR1WugJR5Q/800x500"
     }
   ]
 }
