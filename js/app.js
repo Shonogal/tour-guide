@@ -76,6 +76,12 @@ async function loadHome() {
 }
 
 // ── Trip (place list) ─────────────────────────────────────
+function locDay(d) {
+  if (state.lang !== 'zh') return d;
+  return d.replace('Day 1', '第一天').replace('Day 2', '第二天').replace('Day 3', '第三天')
+          .replace('Day 4', '第四天').replace('Day 5', '第五天');
+}
+
 function loadTrip(tripId) {
   const trip = state.trips.find(t => t.id === tripId);
   if (!trip) return;
@@ -84,22 +90,34 @@ function loadTrip(tripId) {
   updateHeader(loc(trip.title, trip.title_en), loc(trip.destination, trip.destination_en), true, () => loadHome());
   showScreen('screen-trip');
 
+  // Group places by day (preserve order)
+  const days = {};
+  const dayOrder = [];
+  for (const p of trip.places) {
+    if (!days[p.date]) { days[p.date] = []; dayOrder.push(p.date); }
+    days[p.date].push(p);
+  }
+
   const list = document.getElementById('places-list');
-  list.innerHTML = trip.places.map(p => `
-    <div class="place-item" onclick="loadPlace('${p.id}')">
-      ${p.image
-        ? `<div class="place-thumb"><img src="${p.image}" alt="${loc(p.name, p.name_en)}" loading="lazy" /></div>`
-        : `<div class="place-emoji">${p.emoji}</div>`
-      }
-      <div class="place-info">
-        <div class="place-name">${loc(p.name, p.name_en)}</div>
-        <div class="place-meta">
-          <span class="place-day">${p.date}</span>
-          <span class="place-time">${loc(p.time, p.time_en)}</span>
-          <span class="place-category">· ${loc(p.category, p.category_en)}</span>
+  list.innerHTML = dayOrder.map(day => `
+    <div class="day-section">
+      <div class="day-header">${locDay(day)}</div>
+      ${days[day].map(p => `
+        <div class="place-item" onclick="loadPlace('${p.id}')">
+          ${p.image
+            ? `<div class="place-thumb"><img src="${p.image}" alt="${loc(p.name, p.name_en)}" loading="lazy" /></div>`
+            : `<div class="place-emoji">${p.emoji}</div>`
+          }
+          <div class="place-info">
+            <div class="place-name">${loc(p.name, p.name_en)}</div>
+            <div class="place-meta">
+              <span class="place-time">${loc(p.time, p.time_en)}</span>
+              <span class="place-category">· ${loc(p.category, p.category_en)}</span>
+            </div>
+          </div>
+          <div class="place-arrow">›</div>
         </div>
-      </div>
-      <div class="place-arrow">›</div>
+      `).join('')}
     </div>
   `).join('');
 }

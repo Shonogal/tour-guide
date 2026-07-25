@@ -159,6 +159,27 @@ body {
 /* ── Place List ── */
 .places-list { padding: 8px 0; }
 
+.day-section { margin-bottom: 4px; }
+
+.day-header {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent2);
+  padding: 16px 20px 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.day-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
 .place-item {
   margin: 0 16px 10px;
   background: var(--card);
