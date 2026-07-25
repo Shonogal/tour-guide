@@ -9,339 +9,663 @@
   "month_en": "August 2026",
   "places": [
     {
+      "id": "raffles",
+      "name": "来福士广场",
+      "name_en": "Raffles City Chongqing",
+      "emoji": "🏙️",
+      "date": "Day 1",
+      "time": "早上",
+      "time_en": "Morning",
+      "category": "地标建筑",
+      "category_en": "Landmark",
+      "hook": "八座塔楼由空中连廊相连，矗立于两江交汇处，是重庆最震撼的现代地标，站在观景台上，两江尽收眼底。",
+      "hook_en": "Eight soaring towers connected by a sky bridge at the confluence of two rivers — the most dramatic modern landmark in Chongqing, with sweeping views from 250 metres up.",
+      "practical": [
+        "观景台门票约120元，含来回电梯",
+        "建议早上9点前到达，避开人流",
+        "商场内部免费参观，B2层有超市"
+      ],
+      "practical_en": [
+        "Observation deck ticket around RMB 120, includes lift",
+        "Arrive before 9am to beat the crowds",
+        "The mall itself is free to explore; supermarket on B2"
+      ],
+      "food": [
+        "B3美食广场有多家素食友好摊位",
+        "商场内有多家提供豆腐和蔬菜料理的餐厅",
+        "📖 素食提示：点餐时说明不要肉类"
+      ],
+      "food_en": [
+        "B3 food court has several vegetarian-friendly stalls",
+        "Multiple restaurants in the mall offer tofu and vegetable dishes",
+        "📖 Veg tip: say 'bu yao rou' (no meat) when ordering"
+      ]
+    },
+    {
+      "id": "shanchengbudo",
+      "name": "山城步道",
+      "name_en": "Shancheng Step Trail",
+      "emoji": "🪨",
+      "date": "Day 1",
+      "time": "上午",
+      "time_en": "Late Morning",
+      "category": "历史步道",
+      "category_en": "Historic Trail",
+      "hook": "穿行于重庆老城区的石板小径，爬上爬下感受山城独特地貌，巷弄里藏着老重庆人最真实的烟火生活。",
+      "hook_en": "Wind through Chongqing's old stone-paved alleyways, up and down the hills that give this mountain city its name — real local life is hidden in every lane.",
+      "practical": [
+        "步道免费开放，全程约1至2小时",
+        "穿舒适的平底鞋，坡度较大",
+        "山城第二步道与第三步道相连，可自由选择路段"
+      ],
+      "practical_en": [
+        "Free to walk, allow 1–2 hours",
+        "Wear flat comfortable shoes — steep in places",
+        "Steps 2 and 3 connect; pick your preferred section"
+      ],
+      "food": [
+        "沿途有本地摊贩售卖凉粉和糍粑",
+        "步道附近的十八梯有更多小吃选择",
+        "📖 素食提示：凉粉、糍粑均为素食"
+      ],
+      "food_en": [
+        "Local vendors along the way sell liangfen cold jelly noodles and sticky rice cakes",
+        "More snack options nearby at Shibati",
+        "📖 Veg note: liangfen and glutinous rice cakes are both vegetarian"
+      ]
+    },
+    {
+      "id": "shibati",
+      "name": "十八梯",
+      "name_en": "Shibati — 18 Steps",
+      "emoji": "🏮",
+      "date": "Day 1",
+      "time": "上午",
+      "time_en": "Late Morning",
+      "category": "历史街区",
+      "category_en": "Historic District",
+      "hook": "重庆最著名的老街之一，因一段十八级台阶而得名，修复后保留了吊脚楼和老式茶馆，是感受旧重庆氛围最佳地点。",
+      "hook_en": "Named after its 18 famous steps, this restored old district preserves the stilted wooden houses and teahouses of old Chongqing — the most atmospheric neighbourhood in the city.",
+      "practical": [
+        "免费进入，开放时间10:00至22:00",
+        "建议花1至2小时慢慢逛",
+        "下午光线较好，适合拍照"
+      ],
+      "practical_en": [
+        "Free entry, open 10:00–22:00",
+        "Allow 1–2 hours to wander",
+        "Afternoon light is best for photos"
+      ],
+      "food": [
+        "街内有多家本地小吃摊，凉粉、豆腐脑均为素食",
+        "推荐本地豆花，嫩豆腐配各种蘸料",
+        "📖 素食提示：选择无肉馅料的小吃"
+      ],
+      "food_en": [
+        "Multiple local snack stalls inside — liangfen and tofu pudding are vegetarian",
+        "Try the local douhua soft tofu with dipping sauce",
+        "📖 Veg tip: choose snacks without meat fillings"
+      ]
+    },
+    {
+      "id": "veghotpot",
+      "name": "素食火锅午餐",
+      "name_en": "Vegetarian Hotpot Lunch",
+      "emoji": "🍲",
+      "date": "Day 1",
+      "time": "午间",
+      "time_en": "Lunchtime",
+      "category": "餐厅",
+      "category_en": "Restaurant",
+      "hook": "重庆以麻辣火锅闻名全球，素食版本同样精彩，菌汤或番茄底料配上新鲜蔬菜和豆腐，是素食家庭的最佳选择。",
+      "hook_en": "Chongqing is world-famous for hotpot — the vegetarian version is just as exciting. Mushroom or tomato broth loaded with fresh vegetables and tofu is the perfect family feast.",
+      "practical": [
+        "推荐提前网上预订，午餐高峰等位时间长",
+        "可要求鸳鸯锅，一半菌汤一半番茄",
+        "人均消费约60至100元"
+      ],
+      "practical_en": [
+        "Book ahead online — lunchtime queues can be very long",
+        "Ask for the split pot: half mushroom broth, half tomato",
+        "Budget around RMB 60–100 per person"
+      ],
+      "food": [
+        "必点：金针菇、嫩豆腐、宽粉、藕片",
+        "蘸料选麻酱底，香浓不辣",
+        "📖 素食火锅：搜索附近标注素食或菌汤锅底的餐厅"
+      ],
+      "food_en": [
+        "Must order: enoki mushrooms, silken tofu, wide noodles, lotus root slices",
+        "For dipping sauce, choose sesame paste — rich and not spicy",
+        "📖 Search nearby for restaurants with mushroom broth or marked vegetarian hotpot"
+      ]
+    },
+    {
       "id": "jiefangbei",
-      "name": "解放碑步行街",
-      "name_en": "Liberation Monument Plaza",
+      "name": "解放碑",
+      "name_en": "Liberation Monument",
+      "emoji": "🏛️",
       "date": "Day 1",
       "time": "下午",
       "time_en": "Afternoon",
-      "category": "地标",
-      "category_en": "Landmark",
-      "emoji": "🗼",
-      "image": "https://images.pexels.com/photos/11975552/pexels-photo-11975552.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "hook": "1945年，抗日战争胜利的消息传到重庆，市民们冲上街头，在这里欢呼哭泣——这座碑，见证了中国近代史上最沉重也最欢欣的时刻。今天，纪念碑四周是繁华的步行商圈，历史就这样安静地藏在喧嚣里。酒店就在附近五分钟路程，下午出发，先把这个地方走透，感受重庆最有分量的地标。",
-      "hook_en": "In 1945, when news of Japan's surrender reached Chongqing, citizens flooded the streets here — weeping, cheering, and embracing strangers. This monument witnessed one of the most painful and joyful moments in modern Chinese history. Today, it stands quietly at the heart of a bustling shopping district, history hiding in plain sight. The hotel is just 5 minutes away — head out in the afternoon and get your bearings at Chongqing's most iconic square.",
+      "category": "历史地标",
+      "category_en": "Historic Landmark",
+      "hook": "重庆的精神中心，这座建于1947年的胜利纪念碑如今伫立于最繁华的商业街核心，历史与现代在此交汇。",
+      "hook_en": "The spiritual heart of Chongqing — this 1947 Victory Monument now stands at the centre of the city's busiest commercial district, where history and modern life meet.",
       "practical": [
-        "距离酒店步行约5分钟，出门左转即可到达",
-        "下午3点后人流稍减，但8月依然炎热——带矿泉水，戴遮阳帽",
-        "步行街全程遮阳少，建议快速参观，不必久留太阳下",
-        "附近有大型购物中心（解放碑商圈），可进去吹空调休息",
-        "地铁较场口站（Jiaochangkou）B出口直达，万一想乘地铁回来很方便",
-        "周边有全家、罗森便利店，可以买到冷饮和防暑用品"
+        "全天免费参观，无需门票",
+        "附近购物中心林立，可顺便逛逛",
+        "傍晚华灯初上时气氛最佳，适合拍照"
       ],
       "practical_en": [
-        "About 5 minutes walk from the hotel — turn left out the door",
-        "Crowds thin after 3 PM, but August is still hot — bring water and a sun hat",
-        "Little shade on the pedestrian street — a quick visit is better than lingering in the sun",
-        "Large shopping malls nearby (Jiefangbei Commercial District) — duck in to enjoy air conditioning",
-        "Metro: Jiaochangkou Station, Exit B, direct access — handy if you want to take the subway back",
-        "7-Eleven and Lawson convenience stores nearby — cold drinks and sun protection items"
+        "Free to visit, no ticket needed",
+        "Surrounded by shopping malls if you want to browse",
+        "Most atmospheric at dusk when the lights come on"
       ],
       "food": [
-        "🌱 素食早餐：附近「豆腐脑」小摊，嫩滑加麻辣调料，约6元，是重庆人最爱的早点",
-        "🌱 素食推荐：汤圆铺，芝麻或花生馅，全素，约8元",
-        "🌱 下午茶：附近有喜茶、Manner等，Natania会喜欢",
-        "📖 文化背景：解放碑商圈是重庆的消费核心，本地人在这里买东西、约饭、相亲——纪念碑是历史的锚点，但这里的生活气息才是真正的重庆"
+        "附近步行5分钟可找到多家素食餐厅",
+        "酸辣粉去掉肉臊即为素食，是本地特色小吃",
+        "📖 地铁1号线或6号线至解放碑站可直达"
       ],
       "food_en": [
-        "🌱 Vegetarian breakfast: Tofu pudding (豆腐脑) street stalls nearby — silky soft with spicy sauce, about ¥6, a Chongqing morning classic",
-        "🌱 Vegetarian option: Tangyuan shop — glutinous rice balls with sesame or peanut filling, fully vegan, about ¥8",
-        "🌱 Afternoon tea: Heytea and Manner coffee nearby — Natania will love these",
-        "📖 Cultural note: Jiefangbei is Chongqing's commercial heart — locals shop, date, and people-watch here. The monument is the historical anchor, but the everyday life surrounding it is the real Chongqing"
+        "Several vegetarian restaurants within a 5-minute walk",
+        "Sour and spicy noodles suanlafen are vegetarian if ordered without the meat topping",
+        "📖 Take Metro Line 1 or 6 to Jiefangbei station"
+      ]
+    },
+    {
+      "id": "kuixinglou",
+      "name": "魁星楼",
+      "name_en": "Kuixing Tower",
+      "emoji": "🏯",
+      "date": "Day 1",
+      "time": "下午",
+      "time_en": "Afternoon",
+      "category": "历史建筑",
+      "category_en": "Historic Tower",
+      "hook": "悬于山崖边缘的古楼，供奉掌管文运的魁星神，从此处俯瞰两江交汇，是拍摄重庆山城全景的绝佳角度。",
+      "hook_en": "A historic tower perched dramatically at the cliff edge, dedicated to the god of literature. The view from here over both rivers meeting is one of the finest panoramas in Chongqing.",
+      "practical": [
+        "位于东水门历史文化街区内，步行可达",
+        "登楼约10至20元，凭票进入",
+        "下午4至6点光线柔和，拍照最佳"
+      ],
+      "practical_en": [
+        "Located in the Dongshuimen Historic District, walkable from central areas",
+        "Tower entry around RMB 10–20",
+        "Late afternoon 4 to 6pm has the softest light for photos"
+      ],
+      "food": [
+        "附近东水门老街有传统小吃摊",
+        "可购买重庆特产伴手礼",
+        "📖 素食街头小食：凉粉、烤红薯均可找到"
+      ],
+      "food_en": [
+        "Nearby Dongshuimen Old Street has traditional snack vendors",
+        "Good spot to pick up local souvenirs",
+        "📖 Veg-friendly street snacks: cold jelly noodles and roasted sweet potato"
       ]
     },
     {
       "id": "hongyadong",
       "name": "洪崖洞",
       "name_en": "Hongyadong",
-      "date": "Day 1",
-      "time": "晚上",
-      "time_en": "Evening",
-      "category": "地标",
-      "category_en": "Landmark",
       "emoji": "🏮",
-      "image": "https://images.pexels.com/photos/14785197/pexels-photo-14785197.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "hook": "宫崎骏说，《千与千寻》的油屋，灵感来自洪崖洞。当你站在嘉陵江边，看着十一层吊脚楼在夜色中亮起万盏灯火，倒映在江面上——你会明白为什么这里能催生出那样的动画。这不只是一栋建筑，是重庆这座山城的灵魂。酒店就在步行十分钟内，天黑后出发，是今晚最值得做的事。",
-      "hook_en": "Hayao Miyazaki said the bathhouse in Spirited Away was inspired by Hongyadong. Standing by the Jialing River, watching eleven floors of stilted buildings glow with thousands of lanterns reflected on the water below — you'll understand why this place inspired such a dreamlike film. This isn't just a building; it's the soul of Chongqing, a city built into the mountains. The hotel is just 10 minutes away — wait until dark, then go. This is the best thing to do tonight.",
+      "date": "Day 1",
+      "time": "傍晚",
+      "time_en": "Evening",
+      "category": "地标景区",
+      "category_en": "Landmark",
+      "hook": "十一层吊脚楼依崖而建，灯光亮起的夜晚宛如宫崎骏笔下的神秘城市，是重庆最上镜的打卡地。",
+      "hook_en": "Eleven floors of stilted wooden buildings built into the cliff face — when the lights come on at dusk it looks like a scene straight out of Spirited Away. The most photographed spot in Chongqing.",
       "practical": [
-        "距离酒店步行约10分钟，晚上7点后灯亮是最佳时间",
-        "免费入场，不需要门票",
-        "十一层楼都可以走，建议从顶层走到底层，沿途拍照",
-        "人流量极大，手机和钱包放前面口袋，Natania要拉着",
-        "8月夜晚依然约30度，穿轻便透气的衣服",
-        "江边风景最好，找到嘉陵江沿岸的观景台拍倒影效果最佳"
+        "免费进入，全天开放",
+        "建议傍晚6点后到达，灯光效果最佳",
+        "对面千厮门大桥上的视角最经典，不要错过"
       ],
       "practical_en": [
-        "About 10 minutes walk from the hotel — best after 7 PM when the lights come on",
-        "Free entry, no tickets needed",
-        "All 11 floors are open — walk from the top floor down, taking photos as you go",
-        "Extremely crowded — keep your phone and wallet in front pockets, hold Natania's hand",
-        "Still about 30°C at night in August — wear light, breathable clothing",
-        "Best views are by the river — find the Jialing riverfront viewing platform for the best reflection photos"
+        "Free entry, open all day",
+        "Arrive after 6pm for the best lighting effect",
+        "Don't miss the classic view from Qiansimen Bridge opposite"
       ],
       "food": [
-        "🌱 素食推荐：楼内豆腐花摊，凉甜细滑，夜晚边吃边看江景，约5元",
-        "🌱 素食推荐：烤红薯、烤玉米随处可见，简单解饿",
-        "🌱 素食推荐：重庆小面可要求无肉（素面），约10元",
-        "📖 文化背景：洪崖洞建于明清时期，吊脚楼是山城特有的建筑形式——因为地形陡峭，建筑只能悬挂在悬崖上。这里曾是普通居民的家，2006年才改造成商业区"
+        "楼内有重庆特色餐厅，素食选项有限，建议提前确认",
+        "附近滨江路有更多餐饮选择",
+        "📖 明日从此处旅游客运码头出发坐两江小渡"
       ],
       "food_en": [
-        "🌱 Vegetarian option: Tofu pudding stalls inside — cool and silky, great while watching the river at night, about ¥5",
-        "🌱 Vegetarian option: Roasted sweet potatoes and corn are sold everywhere — simple and filling",
-        "🌱 Vegetarian option: Chongqing noodles — ask for 素面 (vegetarian noodles), about ¥10",
-        "📖 Cultural note: Hongyadong was built in the Ming and Qing dynasties. The stilted buildings (吊脚楼) are unique to mountain cities — because the terrain is so steep, buildings had to hang off cliff edges. This was once a working-class residential area, converted to a commercial district in 2006"
+        "Restaurants inside the complex — vegetarian options are limited, confirm before ordering",
+        "More dining options along the riverside road nearby",
+        "📖 Tomorrow's ferry departs from the tourist pier right here"
       ]
     },
     {
-      "id": "hotpot",
-      "name": "重庆火锅",
-      "name_en": "Chongqing Hotpot",
-      "date": "Day 1",
-      "time": "晚上",
-      "time_en": "Evening",
-      "category": "美食",
-      "category_en": "Food",
-      "emoji": "🫕",
-      "image": "https://images.pexels.com/photos/13688385/pexels-photo-13688385.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "hook": "重庆火锅不是一道菜，是一种仪式。一口锅，几个人围坐，没有人低头看手机——这是重庆人延续了一百多年的社交方式。作为素食者，你会发现火锅其实非常包容：一桌子豆腐、菌菇和时蔬，照样是最正宗的重庆体验。五个人第一晚在重庆，没有比这更好的开场了。",
-      "hook_en": "Chongqing hotpot isn't just a meal — it's a ritual. One pot, a table of people gathered around, no one looking at their phones — this is a social tradition that has lasted over a century. As vegetarians, you'll find hotpot surprisingly welcoming: a table full of tofu, mushrooms, and vegetables is just as authentic a Chongqing experience as anything else. Five people together on your first night in Chongqing — there's no better opening act.",
+      "id": "liangjiangferry",
+      "name": "两江小渡",
+      "name_en": "Two Rivers Ferry",
+      "emoji": "⛵",
+      "date": "Day 2",
+      "time": "上午",
+      "time_en": "Morning",
+      "category": "特色渡船",
+      "category_en": "Ferry Ride",
+      "hook": "从洪崖洞旅游码头出发，乘小渡船穿越嘉陵江，用当地人的方式感受山城两江，船上城市天际线尽收眼底。",
+      "hook_en": "Hop on a small ferry from the Hongyadong tourist pier and cross the Jialing River — the way locals have moved around this river city for generations, with stunning skyline views from the water.",
       "practical": [
-        "推荐老字号：「珮姐老火锅」或「秦妈火锅」，均在解放碑附近，步行可达",
-        "点「鸳鸯锅」：一半麻辣一半清汤，清汤那边完全适合素食",
-        "可要求「清油锅底」代替牛油，素食更友好，口味依然香辣",
-        "五个人点餐建议：素食食材为主，荤食材让Vincent和姐姐选",
-        "晚上6-8点高峰，建议5点半前到或提前用大众点评预约",
-        "饭后口气较重——带口香糖或薄荷糖"
+        "从洪崖洞旅游客运码头出发，步行可达",
+        "单程票价约2至5元，现金或支付宝均可",
+        "建议早上9点前出发，避开游客高峰"
       ],
       "practical_en": [
-        "Recommended spots: 'Peijie Old Hotpot' (珮姐老火锅) or 'Qinma Hotpot' (秦妈火锅) — both near Jiefangbei, walkable",
-        "Order the 'yuanyang' pot: half spicy, half clear broth — the clear broth side is fully vegetarian-friendly",
-        "Ask for 'qingyou guodi' (清油锅底): vegetable oil base instead of beef tallow — more vegetarian-friendly and still delicious",
-        "For five people: focus on vegetarian ingredients, let Vincent and your sister choose the meat items",
-        "Peak hours 6–8 PM — arrive by 5:30 PM or pre-book through Dianping (大众点评)",
-        "Your breath will be strong afterward — bring mints or gum"
+        "Departs from Hongyadong Tourist Ferry Pier, a short walk from the complex",
+        "One-way ticket around RMB 2–5, cash or Alipay accepted",
+        "Go before 9am to avoid the tourist rush"
       ],
       "food": [
-        "🌱 素食必点：嫩豆腐、老豆腐、腐竹、土豆片、莲藕、金针菇、茼蒿、宽粉、毛豆腐",
-        "🌱 甜品收尾：冰粉，清凉解辣，5元一碗，完全素食，一定要试",
-        "🌱 饮品：冰镇醪糟（甜米酒，素食），或本地汽水「天府可乐」",
-        "📖 文化背景：重庆火锅起源于清末码头工人文化——工人们把内脏边角料扔进麻辣锅里涮着吃，价格低廉但美味。传统锅底用牛油，现代餐厅大多可换清油。毛肚和鸭肠是当地人最爱的荤食材，那种爽脆口感是重庆集体记忆的一部分"
+        "码头附近有早餐摊，可购买豆浆带上船",
+        "渡船对岸有小食摊",
+        "📖 豆浆为素食；油条可能含猪油，请询问"
       ],
       "food_en": [
-        "🌱 Vegetarian must-orders: silken tofu, firm tofu, tofu skin (腐竹), potato slices, lotus root, enoki mushrooms, chrysanthemum greens (茼蒿), wide glass noodles, fuzzy tofu (毛豆腐)",
-        "🌱 Dessert finisher: Bing Fen (冰粉) — cold, jelly-like and refreshing, clears the spice, ¥5 per bowl, fully vegan, a must-try",
-        "🌱 Drinks: Iced sweet rice wine (醪糟, vegan), or local Tianfu Cola (天府可乐)",
-        "📖 Cultural note: Chongqing hotpot originated in late Qing dynasty dock worker culture — workers threw offal scraps into spicy broth to eat cheaply but deliciously. Traditional broth uses beef tallow; most restaurants can substitute vegetable oil. Tripe (毛肚) and duck intestines are beloved by locals — that bouncy, chewy texture is part of Chongqing's collective food memory"
+        "Breakfast stalls near the pier — grab a soy milk to take on board",
+        "Small food stalls at the landing on the other side",
+        "📖 Soy milk is vegan; fried dough sticks may contain lard, ask first"
+      ]
+    },
+    {
+      "id": "danzishipu",
+      "name": "弹子石老街",
+      "name_en": "Danzishipu Old Street",
+      "emoji": "🏛️",
+      "date": "Day 2",
+      "time": "上午",
+      "time_en": "Morning",
+      "category": "历史街区",
+      "category_en": "Historic District",
+      "hook": "江南岸最具特色的历史街区，民国时期的洋楼与本地老宅并肩而立，还可眺望对岸重庆城市天际线，充满文艺气息。",
+      "hook_en": "The most characterful historic district on the south bank — Republican-era villas stand beside old local houses, with some of the best views looking back across the river at Chongqing's dramatic skyline.",
+      "practical": [
+        "免费进入，建议游览1至2小时",
+        "从渡船码头步行约10分钟",
+        "街区内有艺术装置和独立咖啡馆"
+      ],
+      "practical_en": [
+        "Free entry, allow 1–2 hours",
+        "About 10 minutes walk from the ferry landing",
+        "Art installations and independent cafés throughout the district"
+      ],
+      "food": [
+        "街内有独立咖啡馆和轻食店",
+        "本地糕点铺有花生糍粑和绿豆糕",
+        "📖 素食友好：花生糍粑、绿豆糕均为素食"
+      ],
+      "food_en": [
+        "Independent cafés and light food spots throughout",
+        "Local pastry shops sell peanut sticky rice and mung bean cakes",
+        "📖 Both peanut mochi and mung bean cake are vegetarian"
+      ]
+    },
+    {
+      "id": "zhonglouguangchang",
+      "name": "钟楼广场",
+      "name_en": "Bell Tower Square",
+      "emoji": "🕰️",
+      "date": "Day 2",
+      "time": "上午",
+      "time_en": "Mid-Morning",
+      "category": "历史广场",
+      "category_en": "Historic Square",
+      "hook": "南岸区标志性广场，古朴钟楼与江边风光相映成趣，是本地居民晨练和休闲的聚集地，充满真实的市井生活气息。",
+      "hook_en": "The landmark square of the south bank — the old bell tower against the riverside backdrop is a favourite gathering spot for locals doing morning tai chi and enjoying the fresh river air.",
+      "practical": [
+        "全天免费开放，早晨气氛最佳",
+        "从弹子石老街步行约5至10分钟",
+        "广场旁有公共厕所"
+      ],
+      "practical_en": [
+        "Free and open all day; best atmosphere in the morning",
+        "About 5 to 10 minutes walk from Danzishipu Old Street",
+        "Public toilets available beside the square"
+      ],
+      "food": [
+        "广场附近有传统早餐摊",
+        "重庆小面可要求素食版，去掉肉臊即可",
+        "📖 素食提示：小面去臊子即为素食"
+      ],
+      "food_en": [
+        "Traditional breakfast stalls around the square",
+        "Chongqing noodles xiaomian are a local staple — ask for no meat topping",
+        "📖 Xiaomian without the meat topping is fully vegetarian"
+      ]
+    },
+    {
+      "id": "ciyunsi",
+      "name": "慈云寺",
+      "name_en": "Ciyun Temple",
+      "emoji": "🛕",
+      "date": "Day 2",
+      "time": "上午",
+      "time_en": "Late Morning",
+      "category": "佛教寺庙",
+      "category_en": "Buddhist Temple",
+      "hook": "建于唐代的千年古寺，历经多次修缮仍保留古朴气息，寺内香烟袅袅，是闹市中难得的静谧之地，适合全家祈福。",
+      "hook_en": "A Buddhist temple with over a thousand years of history, rebuilt and restored many times yet still calm and atmospheric — a peaceful family escape from the city's bustle.",
+      "practical": [
+        "门票约10至20元，开放时间8:00至17:00",
+        "进入寺庙请穿着得体，不宜穿暴露衣物",
+        "可在此上香祈福，功德香约5至10元"
+      ],
+      "practical_en": [
+        "Entry around RMB 10–20, open 8:00 to 17:00",
+        "Dress modestly inside the temple",
+        "Incense for offerings available for around RMB 5–10"
+      ],
+      "food": [
+        "寺庙内或附近常设素斋，价格实惠",
+        "寺外小摊有素食小吃",
+        "📖 佛教寺庙素斋为全素，非常适合素食家庭"
+      ],
+      "food_en": [
+        "Vegetarian canteen often available inside or near the temple, very good value",
+        "Vegetarian snack stalls outside the gates",
+        "📖 Buddhist temple canteens are fully vegetarian — ideal for the family"
+      ]
+    },
+    {
+      "id": "xiakuli",
+      "name": "下酷里老街",
+      "name_en": "Lower Kuli Old Street",
+      "emoji": "🍜",
+      "date": "Day 2",
+      "time": "下午",
+      "time_en": "Early Afternoon",
+      "category": "美食街区",
+      "category_en": "Food Street",
+      "hook": "南岸最有活力的创意街区之一，老建筑改造的咖啡馆和小吃摊云集，是重庆年轻人喜爱的聚集地。",
+      "hook_en": "One of the most vibrant creative neighbourhoods on the south bank — old buildings converted into cafés, snack stalls and small shops, buzzing with Chongqing's young crowd.",
+      "practical": [
+        "免费进入，全天开放",
+        "下午2点后人气最旺",
+        "步行约10至15分钟可到龙门酷老街"
+      ],
+      "practical_en": [
+        "Free entry, open all day",
+        "Most lively after 2pm",
+        "About 10 to 15 minutes walk to Longmen Kuli Old Street"
+      ],
+      "food": [
+        "有多家素食友好的轻食店和甜品店",
+        "推荐尝试重庆特色甜品：汤圆和醪糟",
+        "📖 素食甜品：无肉馅汤圆和醪糟均为素食"
+      ],
+      "food_en": [
+        "Several vegetarian-friendly cafés and dessert spots",
+        "Try Chongqing sweet snacks: glutinous rice balls and sweet fermented rice",
+        "📖 Non-meat rice balls and sweet rice wine are both vegetarian"
+      ]
+    },
+    {
+      "id": "longmenkuli",
+      "name": "龙门酷老街",
+      "name_en": "Longmen Kuli Old Street",
+      "emoji": "🏮",
+      "date": "Day 2",
+      "time": "下午",
+      "time_en": "Afternoon",
+      "category": "美食街区",
+      "category_en": "Food Street",
+      "hook": "保存完好的民国风情街道，精品小店与地道小吃并排，到了傍晚灯笼亮起，是重庆最有腔调的老街之一。",
+      "hook_en": "A well-preserved Republican-era street with boutique shops and authentic local snacks side by side — when the lanterns light up at dusk, it becomes one of Chongqing's most atmospheric old streets.",
+      "practical": [
+        "免费进入，傍晚5点后气氛最好",
+        "与下酷里老街相邻，可两处连逛",
+        "停车不便，建议打车或步行前往"
+      ],
+      "practical_en": [
+        "Free entry, best atmosphere after 5pm",
+        "Adjacent to Lower Kuli — easy to visit both together",
+        "Parking is difficult; better to walk or take a taxi"
+      ],
+      "food": [
+        "街内有全素菜馆和豆花饭",
+        "推荐重庆豆花饭，嫩豆腐配多种素菜小碟",
+        "📖 豆花饭：嫩豆腐配素菜碟，重庆传统平民美食，天然素食"
+      ],
+      "food_en": [
+        "Fully vegetarian restaurants inside, plus douhua rice sets",
+        "Try Chongqing douhua fan — soft tofu with a spread of small vegetable side dishes",
+        "📖 Douhua fan is a traditional local working-class meal, naturally vegetarian"
+      ]
+    },
+    {
+      "id": "huangyechatan",
+      "name": "荒野茶摊",
+      "name_en": "Wilderness Tea Stand",
+      "emoji": "🍵",
+      "date": "Day 2",
+      "time": "下午",
+      "time_en": "Afternoon",
+      "category": "特色茶摊",
+      "category_en": "Tea Stand",
+      "hook": "隐于江边绿荫下的露天茶摊，简单的竹椅小桌，一壶清茶，感受老重庆人最爱的慢生活方式。",
+      "hook_en": "A simple open-air tea stand tucked beneath the trees by the riverbank — bamboo chairs, small tables, a pot of tea. The most relaxed, unhurried slice of old Chongqing life.",
+      "practical": [
+        "一壶茶约10至30元，可坐半天",
+        "位于南岸区江边，导航搜索荒野茶摊",
+        "部分茶摊只收现金，请提前准备"
+      ],
+      "practical_en": [
+        "A pot of tea around RMB 10–30; you can sit for hours",
+        "Located on the south bank riverside — search for Huangye Chatan in maps",
+        "Some tea stands are cash only; have small notes ready"
+      ],
+      "food": [
+        "茶摊提供各类清茶，推荐绿茶或茉莉花茶",
+        "附近有本地小贩售卖瓜子和花生",
+        "📖 瓜子和花生为素食，是配茶的传统小食"
+      ],
+      "food_en": [
+        "Green tea and jasmine tea are recommended",
+        "Local vendors nearby selling watermelon seeds and peanuts",
+        "📖 Sunflower seeds and peanuts are vegan — the classic tea-time snack"
+      ]
+    },
+    {
+      "id": "changjiangropeway",
+      "name": "长江索道",
+      "name_en": "Yangtze River Ropeway",
+      "emoji": "🚡",
+      "date": "Day 2",
+      "time": "傍晚",
+      "time_en": "Late Afternoon",
+      "category": "特色交通",
+      "category_en": "Cable Car",
+      "hook": "全世界少有的城市空中客运索道，横跨长江连接南北两岸，俯瞰大江与山城全景，是重庆独一无二的标志体验。",
+      "hook_en": "One of the world's last urban passenger ropeways — originally built to carry commuters across the Yangtze River, now a bucket-list ride with breathtaking views over the river and the mountain city.",
+      "practical": [
+        "单程票约10元，来回约20元",
+        "开放时间7:00至21:30，建议傍晚搭乘",
+        "排队等候约20至40分钟，请预留时间"
+      ],
+      "practical_en": [
+        "One way around RMB 10, return around RMB 20",
+        "Open 7:00 to 21:30; take it at dusk for the best views",
+        "Expect a 20 to 40 minute queue; factor this into your plans"
+      ],
+      "food": [
+        "索道两端附近均有小吃摊",
+        "返回北岸后可在附近寻找晚餐",
+        "📖 北岸站附近有素食餐厅可供晚餐选择"
+      ],
+      "food_en": [
+        "Snack stalls at both ends of the ropeway",
+        "Head back to the north bank for more dinner options",
+        "📖 Vegetarian restaurants near the north bank station for dinner"
+      ]
+    },
+    {
+      "id": "liziba",
+      "name": "李子坝光景平台",
+      "name_en": "Liziba Scenic Platform",
+      "emoji": "🚇",
+      "date": "Day 3",
+      "time": "上午",
+      "time_en": "Morning",
+      "category": "城市奇观",
+      "category_en": "Urban Wonder",
+      "hook": "全球最奇特的城市景观之一：轻轨列车穿越居民楼6至8层，在对面观景平台上亲眼目睹这一重庆独有的神奇一幕。",
+      "hook_en": "One of the most surreal urban sights in the world — a light rail train passes directly through floors 6 to 8 of a residential apartment block. Watch it happen from the viewing platform across the road.",
+      "practical": [
+        "观景平台免费，无需门票",
+        "列车约5至10分钟一班，最佳观景位置在马路对面",
+        "建议早上9点前到达，避开拍照人群"
+      ],
+      "practical_en": [
+        "Free viewing platform, no ticket needed",
+        "Trains run every 5 to 10 minutes; best spot is directly across the road",
+        "Arrive before 9am to beat the photo crowds"
+      ],
+      "food": [
+        "附近有本地早餐店，推荐重庆小面",
+        "李子坝站附近有多家咖啡馆",
+        "📖 素食早餐选项：豆浆、素包子、酸辣粉去肉"
+      ],
+      "food_en": [
+        "Local breakfast shops nearby — try Chongqing noodles xiaomian",
+        "Several cafés near Liziba station",
+        "📖 Veg breakfast options: soy milk, vegetable buns, sour noodles without the meat topping"
+      ]
+    },
+    {
+      "id": "beibinyihao",
+      "name": "重庆北滨一号",
+      "name_en": "Beibin Road No.1",
+      "emoji": "🌊",
+      "date": "Day 3",
+      "time": "上午",
+      "time_en": "Mid-Morning",
+      "category": "滨江休闲",
+      "category_en": "Riverside",
+      "hook": "嘉陵江北岸最新潮的滨水休闲带，面对渝中半岛壮阔全景，咖啡馆、艺术装置与清爽江风完美融合。",
+      "hook_en": "The trendiest riverside promenade on the north bank of the Jialing River, with sweeping views of the Yuzhong Peninsula — cafés, art installations, and a cool river breeze all in one place.",
+      "practical": [
+        "全天免费开放，步行或骑行均可",
+        "距离李子坝打车约10分钟",
+        "建议早晨或傍晚前往，避开正午烈日"
+      ],
+      "practical_en": [
+        "Free and open all day, great for walking or cycling",
+        "About 10 minutes by taxi from Liziba",
+        "Best in the morning or evening; avoid the midday heat in August"
+      ],
+      "food": [
+        "滨江一带有多家精品咖啡馆和轻食店",
+        "推荐找一家有江景座位的咖啡厅休息",
+        "📖 大多数咖啡馆提供素食轻食选项"
+      ],
+      "food_en": [
+        "Several specialty coffee shops and light food spots along the riverside",
+        "Find a café with a river view seat and take a well-earned rest",
+        "📖 Most cafés here have vegetarian light meal options"
+      ]
+    },
+    {
+      "id": "yescci",
+      "name": "Yescci / Basement FG",
+      "name_en": "Yescci / Basement FG",
+      "emoji": "🎸",
+      "date": "Day 3",
+      "time": "下午",
+      "time_en": "Afternoon to Evening",
+      "category": "音乐场所",
+      "category_en": "Live Music",
+      "hook": "重庆独立音乐圈的代表性场馆，地下室里的现场演出充满能量，是感受重庆年轻文化最真实、最有活力的方式。",
+      "hook_en": "An iconic venue in Chongqing's thriving indie music scene — basement live shows full of raw energy. The most authentic way to experience the city's young and creative culture.",
+      "practical": [
+        "演出门票约50至150元，建议提前在大麦网购买",
+        "演出通常在晚上8至9点开场",
+        "下午可在附近探索，晚上回来看演出"
+      ],
+      "practical_en": [
+        "Show tickets around RMB 50–150, buy in advance on Damai app",
+        "Shows usually start at 8 to 9pm",
+        "Explore the neighbourhood in the afternoon; come back for the evening show"
+      ],
+      "food": [
+        "场馆附近有各类餐厅和街边小吃",
+        "重庆夜宵文化丰富，演出后可继续宵夜",
+        "📖 建议演出前找附近素食餐厅用晚餐"
+      ],
+      "food_en": [
+        "Restaurants and snack stalls around the venue",
+        "Chongqing has a great late-night food culture — supper after the show is a must",
+        "📖 Find a vegetarian restaurant nearby for dinner before the show starts"
       ]
     },
     {
       "id": "ciqikou",
       "name": "磁器口古镇",
       "name_en": "Ciqikou Ancient Town",
-      "date": "Day 2",
-      "time": "早上",
-      "time_en": "Morning",
+      "emoji": "🏯",
+      "date": "Day 3",
+      "time": "下午",
+      "time_en": "Afternoon",
       "category": "古镇",
-      "category_en": "Old Town",
-      "emoji": "🏘️",
-      "image": "https://images.pexels.com/photos/14230180/pexels-photo-14230180.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "hook": "磁器口有一千年的历史，但它从来不假装自己是博物馆。早上八九点，老街刚刚苏醒，炸麻花的在升火，卖豆腐干的在摆摊，有人坐在门口喝茶发呆——这是重庆最真实的晨间生活。8月早上相对凉快，趁着人潮还没涌来，把这条街走透，感受这座城市不紧不慢的性格。",
-      "hook_en": "Ciqikou has a thousand years of history, but it never pretends to be a museum. At 8 or 9 in the morning, the old street is just waking up — the fried dough twist maker is stoking their fire, the dried tofu vendor is setting up their stall, someone is sitting by the door sipping tea. This is Chongqing's most authentic morning life. August mornings are relatively cool — get here before the crowds and walk the whole street at your own unhurried pace.",
+      "category_en": "Ancient Town",
+      "hook": "有着一千七百年历史的古镇，保存了完整的明清街道风貌，茶馆、豆花和麻花是此地三绝，也是购买重庆特产的最佳地点。",
+      "hook_en": "A 1700-year-old ancient town with perfectly preserved Ming and Qing dynasty streets — famous for its teahouses, soft tofu, and twisted fried dough. The best place in Chongqing to shop for local specialities.",
       "practical": [
-        "8月建议早上8点出发，趁凉快——10点后人多且热",
-        "从酒店打车约20分钟，费用约25-35元",
-        "全程石板路，穿防滑平底鞋，湿滑时尤其注意",
-        "古镇出口附近有很多仿制纪念品，谨慎购买，真正值得买的是麻花和豆腐干",
-        "镇内有多个茶馆，累了可以进去喝茶吹风，约20-30元/人",
-        "小镇不大，走完全程约1.5小时，中午前可以离开避暑"
+        "免费进入古镇，部分景点单独收费",
+        "建议下午3至5点前往，避开早晨高峰人流",
+        "打车或乘轨道交通1号线至磁器口站"
       ],
       "practical_en": [
-        "August: depart by 8 AM to beat the heat — after 10 AM it gets crowded and hot",
-        "Taxi from hotel: about 20 minutes, fare roughly ¥25–35",
-        "Cobblestone streets throughout — wear flat non-slip shoes, especially if wet",
-        "Near the exit there are many souvenir stalls with imitations — the only things worth buying are the fried dough twists and dried tofu",
-        "Several teahouses inside — sit down for tea and a breeze when you need a rest, about ¥20–30 per person",
-        "The town is not large — you can walk the whole thing in about 1.5 hours, then leave before the afternoon heat"
+        "Free to enter the town; some specific sights charge separately",
+        "Afternoon 3 to 5pm is better than morning to avoid the worst crowds",
+        "Take a taxi or Metro Line 1 to Ciqikou station"
       ],
       "food": [
-        "🌱 必吃素食：古镇麻花，现炸现卖，芝麻口味，完全素食，约10元一根",
-        "🌱 必买手信：豆腐干，多种口味（五香、麻辣等均无肉），真空包装可带回新加坡",
-        "🌱 素食推荐：糍粑，糯米制作，传统小吃，配红糖或芝麻，约5元",
-        "🌱 素食推荐：老鹰茶，磁器口特有的土茶，微苦清香，免费续杯，解暑神器",
-        "📖 文化背景：磁器口名字来自「磁器」（瓷器），明清时期这里是瓷器集散地。抗战时期重庆成为陪都，大批文人学者迁来，给小镇带来了浓厚的文化气息"
+        "豆花饭是此处招牌，全素版本有嫩豆腐配多种蘸料",
+        "麻花为素食，有多种口味可选",
+        "📖 老麻花：传统手工油炸点心，为素食，适合买来当伴手礼"
       ],
       "food_en": [
-        "🌱 Must-eat vegetarian: Ciqikou fried dough twists (麻花) — made fresh to order, sesame flavour, completely vegan, about ¥10 each",
-        "🌱 Must-buy souvenir: Dried tofu (豆腐干) — multiple flavours (spiced, spicy, all meat-free), vacuum packed and perfect to bring back to Singapore",
-        "🌱 Vegetarian option: Ciba (糍粑) — glutinous rice cake, served with red sugar or sesame, about ¥5",
-        "🌱 Vegetarian option: Laoying Tea (老鹰茶) — a herbal tea unique to Ciqikou, slightly bitter and fragrant, free refills, an amazing way to cool down",
-        "📖 Cultural note: 'Ciqikou' means 'Porcelain Gateway' — this was a major porcelain trading hub in the Ming and Qing dynasties. During WWII, when Chongqing became China's wartime capital, scholars and writers moved here, giving the town a rich cultural atmosphere it still carries today"
+        "Douhua fan soft tofu with dipping sauces is the signature dish — fully vegetarian version available",
+        "Mahua twisted fried dough is vegetarian and comes in many flavours",
+        "📖 Mahua is a traditional handmade fried snack, vegetarian, and great to bring home as a gift"
       ]
     },
     {
-      "id": "ropeway",
-      "name": "长江索道",
-      "name_en": "Yangtze River Ropeway",
-      "date": "Day 2",
-      "time": "下午",
-      "time_en": "Afternoon",
-      "category": "体验",
-      "category_en": "Experience",
-      "emoji": "🚡",
-      "image": "https://images.pexels.com/photos/32599840/pexels-photo-32599840.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "hook": "这不只是一趟缆车，这是重庆独有的通勤方式。三十年前，有真实的居民坐着它去上班、买菜、接Natania这个年龄的孩子放学。今天它成了景点，但那种高空俯瞰两岸、长江在脚下流淌的感觉，是任何公路或地铁都给不了的。五分钟，值得。",
-      "hook_en": "This isn't just a cable car — it's a uniquely Chongqing way of commuting. Thirty years ago, real residents rode this to go to work, buy groceries, and pick up children Natania's age from school. Today it's a tourist attraction, but soaring high above both riverbanks with the Yangtze flowing beneath your feet — no road or subway can give you that feeling. Five minutes. Worth it.",
-      "practical": [
-        "单程票约15元，买来回票，可以在南岸稍作停留再返回",
-        "运营时间：上午9点至晚上10点",
-        "8月下午较热，建议4点后再去，光线也更好拍照",
-        "站在缆车靠江的一侧，视野最开阔",
-        "南岸下车后，可步行至南滨路江边散步，风景不错且有遮阳树",
-        "人流量大时需排队，周末约等20-30分钟"
-      ],
-      "practical_en": [
-        "Single trip ticket about ¥15 — buy a return ticket and spend a little time on the south bank before heading back",
-        "Operating hours: 9 AM to 10 PM",
-        "August afternoons are hot — going after 4 PM is cooler and better for photos",
-        "Stand on the river-facing side of the cable car for the widest view",
-        "After getting off on the south bank, walk to Nanbin Road riverfront for a stroll — good scenery and shaded trees",
-        "During busy periods expect to queue — weekends can be 20–30 minute waits"
-      ],
-      "food": [
-        "🌱 素食推荐：南岸下车后，南滨路有多家餐厅，可搜索「菌类火锅」或「素食火锅」",
-        "🌱 素食推荐：南滨路上有咖啡馆，适合下午茶休息，躲避午后热浪",
-        "🌱 解暑必备：索道附近有凉粉摊（纯素），清爽酸辣，约8元",
-        "📖 文化背景：长江索道建于1987年，原本是普通交通工具，让两岸居民不必绕行几公里的桥。随着桥梁越建越多，索道逐渐失去实用价值，却因为独特性成了重庆最著名的景点之一"
-      ],
-      "food_en": [
-        "🌱 Vegetarian option: On the south bank near Nanbin Road, search for 'mushroom hotpot' (菌类火锅) or 'vegetarian hotpot' (素食火锅)",
-        "🌱 Vegetarian option: Several cafés along Nanbin Road — good for afternoon tea and escaping the heat",
-        "🌱 Heat reliever: Look for liangfen (凉粉) stalls near the ropeway — cold starch jelly, fully vegan, tangy and spicy, about ¥8",
-        "📖 Cultural note: The Yangtze Ropeway was built in 1987 as ordinary public transport, letting residents cross without travelling several kilometres to the nearest bridge. As more bridges were built, the ropeway became redundant as transport — but its uniqueness made it famous, and it's now one of Chongqing's most recognisable attractions"
-      ]
-    },
-    {
-      "id": "chaotianmen",
-      "name": "朝天门码头",
-      "name_en": "Chaotianmen Dock",
+      "id": "chongqing1949",
+      "name": "重庆1949大剧院",
+      "name_en": "Chongqing 1949 Grand Theatre",
+      "emoji": "🎭",
       "date": "Day 3",
-      "time": "早上",
-      "time_en": "Morning",
-      "category": "地标",
-      "category_en": "Landmark",
-      "emoji": "⛵",
-      "image": "https://images.pexels.com/photos/35439708/pexels-photo-35439708.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "hook": "这里是重庆的起点——嘉陵江和长江在这里交汇，颜色不同的两股水流并排流淌，泾渭分明。几千年前的商船从这里出发，抗战时期的物资从这里运进城。今天，朝天门依然是重庆的门户。早上来，江风习习，看两江交汇那条清晰的分界线，是全市最壮观也最免费的自然景观。",
-      "hook_en": "This is where Chongqing begins — the Jialing River and the Yangtze River converge here, their waters running side by side in different colours, a clear dividing line visible to the eye. Merchant ships departed from here thousands of years ago; wartime supplies were brought in through here during WWII. Today, Chaotianmen is still Chongqing's gateway. Come in the morning — the river breeze is cool, and the two rivers meeting is the city's most spectacular (and free) natural sight.",
+      "time": "夜晚",
+      "time_en": "Evening",
+      "category": "沉浸剧院",
+      "category_en": "Immersive Theatre",
+      "hook": "以1940年代抗战时期重庆为背景的沉浸式大型演出，场面震撼、灯光绚丽、演员众多，是重庆最值得体验的文化演出之一。",
+      "hook_en": "An epic immersive show set in wartime Chongqing of the 1940s — dramatic staging, spectacular lighting and a cast of hundreds. One of the most unmissable cultural experiences in the city.",
       "practical": [
-        "早上8点前出发，8月早晨相对凉爽，风景也最清晰",
-        "从酒店打车约10分钟，费用约15-20元",
-        "朝天门广场免费开放，可以走到最前端的观景台看两江交汇",
-        "旁边的来福士购物中心（Raffles City）是重庆地标，外形独特，进去吹空调也值得",
-        "来福士顶层有观景台（需购票），可俯瞰整个两江交汇，约88元/人",
-        "8月早上约30度，带水，太阳出来后尽快撤到室内"
+        "票价约298至598元，需提前网上购票",
+        "演出时长约90分钟，通常晚上8点开场",
+        "演出场地位于磁器口附近，两处可连续游览"
       ],
       "practical_en": [
-        "Depart before 8 AM — August mornings are relatively cool and the views are clearest",
-        "Taxi from hotel: about 10 minutes, fare roughly ¥15–20",
-        "Chaotianmen Plaza is free — walk to the very tip of the viewing platform to see the two rivers meet",
-        "Next door is Raffles City Chongqing (来福士) — a striking sail-shaped landmark, worth going in for the air conditioning too",
-        "Raffles City rooftop has a paid observation deck with panoramic river views (about ¥88 per person)",
-        "By 8 AM the sun is already strong in August — bring water and move indoors quickly once the heat builds"
+        "Tickets around RMB 298–598, must book online in advance",
+        "Show runs about 90 minutes, usually starts at 8pm",
+        "Located near Ciqikou — easy to combine both in one afternoon and evening"
       ],
       "food": [
-        "🌱 素食早餐：附近街边有包子铺，素馅包子（韭菜鸡蛋、香菇青菜），约3-5元一个",
-        "🌱 素食推荐：来福士商场内有多个餐厅，可找到日式或轻食素食选项",
-        "🌱 消暑饮品：附近便利店买冰镇豆浆或绿豆汤，经典中式消暑",
-        "📖 文化背景：「朝天」的意思是「朝向天子」——这里曾是古代迎接皇帝使者的码头。1891年重庆开埠，朝天门成为中国内陆最重要的通商口岸之一，大量外国商品从这里进入中国腹地"
+        "剧院内有餐厅，建议演出前提前用餐",
+        "磁器口附近餐厅是演前晚餐的好选择",
+        "📖 建议提前1小时抵达剧院，方便用餐和拍摄剧院外景"
       ],
       "food_en": [
-        "🌱 Vegetarian breakfast: Look for steamed bun shops on nearby streets — vegetarian fillings like chive and egg (韭菜鸡蛋) or mushroom and greens, about ¥3–5 each",
-        "🌱 Vegetarian option: Multiple restaurants inside Raffles City — Japanese food and light meal options often have vegetarian choices",
-        "🌱 Heat relief drink: Buy cold soy milk or mung bean soup from a nearby convenience store — classic Chinese summer refreshers",
-        "📖 Cultural note: 'Chaotian' means 'facing the emperor' — this was once the dock used to receive imperial envoys. In 1891, Chongqing became a treaty port, and Chaotianmen became one of China's most important inland trading hubs, with foreign goods flowing deep into China through this gateway"
-      ]
-    },
-    {
-      "id": "liziba",
-      "name": "李子坝轻轨站",
-      "name_en": "Liziba Rail Station",
-      "date": "Day 3",
-      "time": "中午",
-      "time_en": "Noon",
-      "category": "体验",
-      "category_en": "Experience",
-      "emoji": "🚝",
-      "image": "https://images.pexels.com/photos/33983933/pexels-photo-33983933.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "hook": "世界上有一列轻轨，会从公寓楼的六楼直接穿过去。不是隧道——是真正住着人的居民楼，上面有人家，楼道有电梯，一楼有超市，然后轻轨从楼的中间穿过，几秒后出现在另一边，若无其事地继续行驶。这只在重庆有。Natania看到的那一刻，会目瞪口呆。",
-      "hook_en": "There is a train in the world that passes right through the sixth floor of an apartment building. Not a tunnel — a building where real people live, with floors above, a lift in the corridor, a supermarket on the ground floor, and the train cutting straight through the middle of it, emerging on the other side a few seconds later, carrying on as if nothing unusual just happened. This only exists in Chongqing. The look on Natania's face when she sees it will be priceless.",
-      "practical": [
-        "乘坐轨道交通2号线，在「李子坝站」下车，站台本身就在楼里，亲身体验穿楼",
-        "或者在楼外的马路边等待，看列车穿楼而过——更有视觉冲击力",
-        "观看最佳位置：李子坝正街的高处，可以拍到列车从楼中穿出的完整画面",
-        "8月中午热，建议快去快回，看完就撤，前往鹅岭二厂",
-        "不需要门票，坐地铁或在楼外观看均可",
-        "周末人很多，想拍到清晰的照片需要耐心等待列车"
-      ],
-      "practical_en": [
-        "Take Light Rail Line 2 to 'Liziba Station' — the platform itself is inside the building, so you experience it firsthand",
-        "Alternatively, wait on the street outside the building and watch the train pass through — more visual impact",
-        "Best viewing spot: the elevated section of Liziba Zheng Street, where you can photograph the full frame of the train emerging from the building",
-        "Noon in August is very hot — get in and out quickly, then head straight to Eling Factory No.2",
-        "No tickets needed — take the subway or watch from the street for free",
-        "Weekends are crowded — you'll need patience to get a clean photo when the train comes"
-      ],
-      "food": [
-        "🌱 附近小吃：李子坝周边有重庆本地小餐馆，可找到素食面条或米饭",
-        "🌱 解暑：附近便利店买饮料，中午最热，快速补水",
-        "📖 文化背景：李子坝站建于2005年，是全中国第一个与居民楼合建的高架轻轨站。当时的工程挑战是：列车穿过楼体时的震动和噪音如何隔绝？工程师在站台和楼体之间加装了特制减震橡胶垫，效果好到楼内居民几乎感觉不到列车经过。这个解决方案现在已成为中国城市交通工程的教科书案例"
-      ],
-      "food_en": [
-        "🌱 Nearby food: Local Chongqing restaurants around Liziba — look for vegetarian noodles or rice dishes",
-        "🌱 Beat the heat: Buy cold drinks from a nearby convenience store — it's noon, the hottest part of the day, hydrate quickly",
-        "📖 Cultural note: Liziba Station was built in 2005 — the first elevated rail station in China integrated with a residential building. Engineers installed specially designed rubber shock absorbers between the track and the building structure — so effective that residents barely feel the train go by. This solution is now a textbook case in Chinese urban transport engineering"
-      ]
-    },
-    {
-      "id": "elingfactory",
-      "name": "鹅岭二厂",
-      "name_en": "Eling Factory No.2",
-      "date": "Day 3",
-      "time": "下午",
-      "time_en": "Afternoon",
-      "category": "文化",
-      "category_en": "Culture",
-      "emoji": "🏭",
-      "image": "https://images.pexels.com/photos/17244024/pexels-photo-17244024.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "hook": "这里曾经是民国中央银行的印刷厂，印过钞票、书籍和地图。后来废弃了几十年，红砖墙上爬满了野草，厂房里积满了灰尘。2018年，它被改造成了鹅岭二厂——旧厂房变成了咖啡馆、画廊和独立书店，历史的重量和年轻人的创意混在一起，形成了重庆最有味道的下午。",
-      "hook_en": "This was once the printing factory of the Republic of China's Central Bank — it printed banknotes, books, and maps. Then it sat abandoned for decades, wild grass crawling up the red brick walls, dust filling the old factory floors. In 2018, it was transformed into Eling Factory No.2 — old workshops became coffee shops, galleries, and independent bookstores. The weight of history and the energy of young creatives mixed together, making for Chongqing's most atmospheric afternoon.",
-      "practical": [
-        "下午2点后人流减少，适合慢慢逛",
-        "从李子坝打车约10分钟，费用约15元",
-        "园区有多个高低错落的院子，全程有遮阳，比室外凉快不少",
-        "适合慢慢走，不赶时间，建议留1.5-2小时",
-        "部分区域是露天但有树荫，带一把小扇子",
-        "有电梯，轮椅友好，老人和小孩都方便"
-      ],
-      "practical_en": [
-        "After 2 PM crowds thin — better for wandering slowly",
-        "Taxi from Liziba: about 10 minutes, fare roughly ¥15",
-        "The complex has multiple courtyards on different levels — all covered or shaded, considerably cooler than being outside",
-        "This is a slow place — no need to rush, budget 1.5–2 hours",
-        "Some areas are open-air but have tree shade — bring a small fan",
-        "Lifts available, wheelchair-friendly, comfortable for elderly visitors and young children"
-      ],
-      "food": [
-        "🌱 素食天堂：园区内有多家咖啡馆提供素食轻食，三明治、沙拉、植物奶咖啡",
-        "🌱 推荐体验：找一家带露台的咖啡馆，点一杯冷饮，坐下来发呆——这是鹅岭二厂最正确的打开方式",
-        "🌱 素食小吃：园区内有手工饼干和糕点店，多数无肉",
-        "📖 文化背景：鹅岭二厂的前身「重庆印制二厂」曾是西南地区最重要的彩色印刷基地，毛泽东时代的政治海报、文革时期的宣传画，都曾在这里印制。今天的改造刻意保留了那个年代的工业痕迹——红砖、铁架、标语——让历史和当代文化形成对话"
-      ],
-      "food_en": [
-        "🌱 Vegetarian paradise: Multiple cafés inside the complex offer vegetarian light meals — sandwiches, salads, plant-milk coffee",
-        "🌱 Recommended experience: Find a café with a terrace, order a cold drink, sit down and do absolutely nothing — this is the correct way to enjoy Eling Factory No.2",
-        "🌱 Vegetarian snacks: Artisan biscuit and cake shops inside the complex, most are meat-free",
-        "📖 Cultural note: The predecessor, 'Chongqing Printing Factory No.2,' was once the most important colour printing base in southwest China — Mao-era political posters and Cultural Revolution propaganda were all printed here. The renovation deliberately preserved those industrial traces — red brick, iron frames, slogans — creating a dialogue between history and contemporary culture"
+        "Restaurant inside the theatre — plan to eat before the show starts",
+        "Restaurants in nearby Ciqikou are a great dinner option before the show",
+        "📖 Arrive at least an hour early to eat, explore, and photograph the venue exterior"
       ]
     }
   ]
